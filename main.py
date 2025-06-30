@@ -5,6 +5,16 @@ import os
 import sqlite3
 import openai
 import asyncio
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return '✅ Bot is live and working on Render!'
+
+# Rest of your bot logic... (handlers, webhook setup, etc)
+
 
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
